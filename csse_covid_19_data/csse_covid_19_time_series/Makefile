@@ -1,12 +1,14 @@
 CONFIRMED = time_series_19-covid-Confirmed.csv
-CSVTOOL = csvtool
+CSVTOOL = $(HOME)/.opam/default/bin/csvtool
 INDIANA = indiana-confirmed.csv
 CALIFORNIA = california-confirmed.csv
 STATES = $(INDIANA) $(CALIFORNIA)
 
-.PHONY: indiana clean
+.PHONY: indiana california clean
 
-.DEFAULT: $(STATES)
+.DEFAULT: all
+
+all: $(STATES)
 
 califorina: $(CALIFORNIA)
 
